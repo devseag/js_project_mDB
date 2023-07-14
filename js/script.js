@@ -24,6 +24,83 @@ const movieDB = {
 	]
 };
 
-// const box = document.querySelector('.promo__adv');
+const adv = document.querySelectorAll('.promo__adv img'),
+	  poster = document.querySelector('.promo__bg'),
+	//   genre = poster.getElementsByClassName('promo__genre');
+	  genre = poster.querySelector('.promo__genre'),
+	  movieList = document.querySelector('.promo__interactive-list');
+	//   promo_interactive_title = document.querySelector('.promo__interactive-list'),
+	//   promo = document.querySelectorAll('.promo__interactive-item'),
+	//   promo_delete = document.querySelector('.promo__interactive-item .delete');
 
-// console.log(box);
+adv.forEach(item => {
+	item.remove();
+});
+
+// adv.forEach(function(item) {
+// 	item.remove();
+// });
+
+// const genre = document.querySelectorAll('.promo__content .promo__bg .promo__genre');
+// const genre = document.getElementsByClassName('promo__genre');
+
+// genre[0].replaceWith('<div class="promo__genre">DRAMA</div>');
+// genre[0].innerHTML = '<div class="promo__genre">DRAMA</div>';
+// genre[0].textContent = 'DRAMA';
+genre.textContent = 'DRAMA';
+
+
+// background:url("../img/mars.webp")
+// console.log(poster);
+poster.style.backgroundImage = 'url("/img/bg.jpg")';
+
+// console.log(promo);
+// console.log(promo_delete);
+
+// promo.forEach((item, i) => {
+// 	console.log(item);
+// 	// item.replaceWith(movieDB.movies.sort()[i]);
+// 	item.textContent = movieDB.movies.sort()[i]; //.after(promo_delete);
+// });
+
+// promo.forEach((item, i) => {
+// 	item.insertAdjacentHTML('afterend', '<div class="delete"></div>');
+// });
+
+// console.log(promo_interactive_title);
+
+// promo_interactive_title.style.listStyleType = 'decimal';
+
+// promo.forEach((item, i) => {
+// 	item.after(promo_delete);
+// });
+
+
+
+
+console.log(movieList);
+movieList.innerHTML = '';
+
+movieDB.movies.sort();
+
+
+
+
+// console.log(poster.innerHTML);
+
+// listStyleType decimal
+
+// const li = document.createElement('li');
+// // li.classList.add('black');
+// movieList.append(li);
+
+
+
+
+movieDB.movies.forEach((film, i) => {
+	movieList.innerHTML += `
+	<li class="promo__interactive-item">${i + 1} ${film}
+		<div class="delete"></div>
+	</li>
+	`;
+});
